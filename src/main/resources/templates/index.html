@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h3 th:text="${currentPath}">undefined path</h3>
+    <div>
+        <span>url: </span>
+        <br/>
+        <input id="url" placeholder="url"/>
+        <br/>
+        <span>method: </span>
+        <br/>
+        <input id="method" placeholder="method"/>
+        <br/>
+        <span>filename: </span>
+        <br/>
+        <input id="filename" placeholder="filename" />
+        <br/>
+        <span>content: </span>
+        <br/>
+        <textarea id="content" placeholder="content"></textarea>
+        <br/>
+        <button onclick="save()">save</button>
+    </div>
+
+    <h2>Resource Table</h2>
+    <table>
+        <tr>
+            <th>URL</th>
+            <th>Method</th>
+            <th>File Name</th>
+            <th>content</th>
+        </tr>
+        <tr th:each="resource : ${resources}">
+            <td th:text="${resource.url}"></td>
+            <td th:text="${resource.method}"></td>
+            <td th:text="${resource.fileName}"></td>
+            <td th:text="${resource.content}"></td>
+        </tr>
+    </table>
+</body>
+    <script src="resources/static/connect.js"/>
+</html>
