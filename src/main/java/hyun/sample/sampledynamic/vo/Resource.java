@@ -15,4 +15,5 @@ public class Resource {
     private String method;
     private String fileName;
     private Map<String, Object> content;
+
 }

@@ -32,7 +32,8 @@ public class ResourceController {
 
     @GetMapping
     public String getAll(Model model) {
-        model.addAttribute("resources", resourceService.getAll());
+        model.addAttribute("resourcesUrl", resourceService.getAll());
+        model.addAttribute("currentPath", PATH);
         return "index";
     }
 }

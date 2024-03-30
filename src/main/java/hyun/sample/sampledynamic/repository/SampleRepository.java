@@ -59,7 +59,7 @@ public class SampleRepository {
             // ??
         }
         executorService.submit(() -> {
-            File file = new File(DIRECTORY_PATH + File.separator + resource.getFileName());
+            File file = new File(DIRECTORY_PATH + File.separator + resource.getFileName() + ".json");
             try {
                 String json = objectMapper.writeValueAsString(resource);
                 Files.write(file.toPath(), json.getBytes());
